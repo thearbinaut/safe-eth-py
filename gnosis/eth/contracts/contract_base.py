@@ -3,9 +3,9 @@ from functools import cached_property
 from logging import getLogger
 from typing import Callable, Optional
 
-from eth_typing import ChecksumAddress
-from web3 import Web3
-from web3.contract import Contract
+from eth_typing import ChecksumAddress # type: ignore
+from web3 import Web3 # type: ignore
+from web3.contract import Contract # type: ignore
 
 logger = getLogger(__name__)
 
@@ -14,7 +14,7 @@ class ContractBase(metaclass=ABCMeta):
     def __init__(
         self,
         address: ChecksumAddress,
-        ethereum_client: "EthereumClient",  # noqa F821
+        ethereum_client: "ethereum_client",  # noqa F821 # type: ignore
         *args,
         **kwargs
     ):
